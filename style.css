@@ -45,7 +45,8 @@ body {
 
 h1 {
     font-size: 3rem;
-    margin: 1rem 0;
+    margin: 1rem;
+    margin-bottom: 0rem;
     color: var(--primary);
     display: flex;
     justify-content: center;
@@ -54,13 +55,12 @@ h2 {
     font-size: 2rem;
     margin: 1rem 0;
     color: var(--primary);
-    display: flex;
-    justify-content: center;
+    text-align: center;
 }
 
 p {
     font-size: 1.25rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
     text-align: center;
     max-width: 600px;
 }
@@ -141,6 +141,62 @@ nav.show{
   text-align: center;
 }
 
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.button {
+    text-decoration: none;
+    background-color: var(--secondary);
+    color: var(--bg-dark);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+}
+
+.hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.github {
+    width: 2rem;
+    height: 2rem;
+}
+.linkedin{
+    width: 2rem;
+    height: 2rem;
+    filter: invert(1) brightness(200%);  
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-top: 1px solid var(--highlight);
+    color: var(--text-muted);
+    background-color: var(--bg);
+}
+
+.socials {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
 /* Tablet Styles */
 @media (min-width: 768px) {
     .boxes {

@@ -1,0 +1,106 @@
+:root{
+  --border-radius: 20px 0px 20px 0px;
+}
+
+:root {
+    --bg-dark: hsl(7 100% 2%);
+    --bg: hsl(17 100% 4%);
+    --bg-light: hsl(27 100% 7%);
+    --text: hsl(29 100% 90%);
+    --text-muted: hsl(30 63% 64%);
+    --highlight: hsl(35 92% 29%);
+    --border: hsl(35 100% 17%);
+    --border-muted: hsl(30 100% 11%); 
+    --primary: hsl(30 68% 64%);
+    --secondary: hsl(207 84% 70%);
+    --danger: hsl(8 58% 66%);
+    --warning: hsl(51 41% 48%);
+    --success: hsl(150 37% 53%);
+    --info: hsl(217 66% 68%);
+}
+
+/* theme-dark.css */
+[data-theme="dark"] {
+    --bg-dark: hsl(29 100% 87%);
+    --bg: hsl(29 100% 93%);
+    --bg-light: hsl(29 100% 98%);
+    --text: hsl(1 100% 6%);
+    --text-muted: hsl(35 100% 17%);
+    --highlight: hsl(29 100% 95%);
+    --border: hsl(31 57% 43%);
+    --border-muted: hsl(30 56% 56%);
+    --primary: hsl(35 100% 17%);
+    --secondary: hsl(202 100% 22%);
+    --danger: hsl(8 43% 42%);
+    --warning: hsl(53 100% 19%);
+    --success: hsl(157 83% 25%);
+    --info: hsl(217 46% 43%);
+}
+
+/* reset default margins and padding that create “extra boxes” */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+.profile-pic {
+    width: 150px;
+    /*height: 150px;*/
+    border-radius: var(--border-radius);
+    border: 4px solid var(--border);
+}
+
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+    
+}
+
+/* Desktop Styles */
+@media (min-width: 1280px) {
+    nav {
+    background-color: var(--bg-light);
+    border-bottom: 1px solid var(--highlight);
+    }
+
+    nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    }
+    nav .home-li {
+    margin-right: auto;
+    }
+    nav a {
+    display: flex;
+    text-decoration: none;
+    color: var(--text);
+    padding: 1em 2em;
+    }
+
+    nav a:hover {
+    background-color: var(--highlight);
+    }
+
+    nav a.active-link {
+    border-bottom: 2px solid var(--text);
+    }
+    nav a.accent-link {
+    background-color: var(--secondary);
+    }
+}
+
+
+
+
+
+/* debugging styles */
+/* {
+  outline: 1px dashed red;
+}

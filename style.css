@@ -25,7 +25,11 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+.rubik-80s-fade-regular {
+  font-family: "Rubik 80s Fade", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
 html {
     font-family: 'Segoe UI', sans-serif;
     color: var(--text);

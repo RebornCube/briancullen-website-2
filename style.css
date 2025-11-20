@@ -133,7 +133,7 @@ nav.show ~ #overlay {
   height: 3rem;
 }
 #overlay {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
     position: fixed;
     inset: 0;
     z-index: 8;

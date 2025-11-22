@@ -45,13 +45,20 @@
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
 
+                <label for="topic">General Topic</label>
+                <label>Project Enquiry<input type="radio" name="topic" value="Project Enquiry"/></label>
+                <label>Collaboration<input type="radio" name="topic" value="Collaboration"/></label>
+                <input type="radio" name="topic" value="Other"/> Other
+                
                 <label for="subject">Subject</label>
                 <input type="text" id="subject" name="subject" required>
 
                 <label for="message">Message</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
 
+                <button type="reset">Reset</button> 
                 <button type="submit">Send Message</button>
+                
             </form>
         </div>
 

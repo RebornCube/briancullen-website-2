@@ -161,6 +161,9 @@ nav.show ~ #overlay {
   align-items: center;
   background-color: var(--bg-light);
   height: 100%;
+  border-radius: var(--border-radius);
+    border: 1px solid var(--border);
+    border-top: var(--highlight) 1px solid;
 }
 
 .box p {
@@ -345,10 +348,10 @@ footer {
     background-color: var(--highlight);
     }
     .openSidebar, .closeSidebar {
-        display: none;
+        display: none; /* hide menu buttons on desktop */
     }
     .boxes {
-    grid-template-columns: repeat(4, minmax(0, 400px));
+    grid-template-columns: repeat(4, minmax(0, 400px)); /* four columns max 400px each to avoid very wide boxes on large desktops*/
      margin: 0 auto;
     }
 }

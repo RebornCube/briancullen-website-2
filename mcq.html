@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SSPL9043 Self-Grading Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 1rem auto;
+            padding: 0 1rem 3rem;
+            line-height: 1.4;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .question {
+            margin-bottom: 1rem;
+            padding: 0.5rem 0.75rem;
+            border-bottom: 1px solid #ddd;
+        }
+        .question p {
+            margin: 0 0 0.4rem;
+        }
+        .options label {
+            display: block;
+        }
+        #result {
+            margin-top: 1.5rem;
+            padding: 0.75rem;
+            border: 1px solid #333;
+            font-weight: bold;
+            text-align: center;
+        }
+        .correct {
+            background-color: #e6ffe6;
+        }
+        .incorrect {
+            background-color: #ffe6e6;
+        }
+    </style>
+</head>
+<body>
+<h1>SSPL9043 – Self-Grading Mock Exam</h1>
+
+<form id="quizForm">
+
+    <div class="question" id="q1-block">
+        <p><strong>1.</strong> Geometrical Geodesy is mainly concerned with the shape of the Earth.</p>
+        <div class="options">
+            <label><input type="radio" name="q1" value="T"> True</label>
+            <label><input type="radio" name="q1" value="F"> False</label>
+        </div>
+    </div>
+
+    <div class="question" id="q2-block">
+        <p><strong>2.</strong> Irish Geodetic Coordinates can be characterised by:</p>
+        <div class="options">
+            <label><input type="radio" name="q2" value="a"> a) Projected coordinates</label>
+            <label><input type="radio" name="q2" value="b"> b) Geographic coordinates</label>
+            <label><input type="radio" name="q2" value="c"> c) Cartesian coordinates</label>
+            <label><input type="radio" name="q2" value="d"> d) Height-only coordinates</label>
+        </div>
+    </div>
+
+    <div class="question" id="q3-block">
+        <p><strong>3.</strong> Irish National Grid Coordinates are defined in:</p>
+        <div class="options">
+            <label><input type="radio" name="q3" value="a"> a) Geocentric XYZ</label>
+            <label><input type="radio" name="q3" value="b"> b) Geographic</label>
+            <label><input type="radio" name="q3" value="c"> c) Projected eastings &amp; northings</label>
+            <label><input type="radio" name="q3" value="d"> d) 3D Cartesian engineering coordinates</label>
+        </div>
+    </div>
+
+    <div class="question" id="q4-block">
+        <p><strong>4.</strong> IRENET coordinates are GNSS compatible.</p>
+        <div class="options">
+            <label><input type="radio" name="q4" value="T"> True</label>
+            <label><input type="radio" name="q4" value="F"> False</label>
+        </div>
+    </div>
+
+    <div class="question" id="q5-block">
+        <p><strong>5.</strong> In a terrestrial reference system, which statement is correct?</p>
+        <div class="options">
+            <label><input type="radio" name="q5" value="a"> a) X = North Pole</label>
+            <label><input type="radio" name="q5" value="b"> b) Y = Greenwich</label>
+            <label><input type="radio" name="q5" value="c"> c) X = Greenwich, Y = 90° east, Z = North Pole</label>
+            <label><input type="radio" name="q5" value="d"> d) Axes arbitrary</label>
+        </div>
+    </div>
+
+    <div class="question" id="q6-block">
+        <p><strong>6.</strong> ITRS coordinates are permanently fixed.</p>
+        <div class="options">
+            <label><input type="radio" name="q6" value="T"> True</label>
+            <label><input type="radio" name="q6" value="F"> False</label>
+        </div>
+    </div>
+
+    <div class="question" id="q7-block">
+        <p><strong>7.</strong> ETRS coordinates drift relative to ITRS by approximately:</p>
+        <div class="options">
+            <label><input type="radio" name="q7" value="a"> a) 1 mm/yr</label>
+            <label><input type="radio" name="q7" value="b"> b) 2.5 cm/yr</label>
+            <label><input type="radio" name="q7" value="c"> c) 10 cm/yr</label>
+            <label><input type="radio" name="q7" value="d"> d) 1 m/yr</label>
+        </div>
+    </div>
+
+    <div class="question" id="q8-block">
+        <p><strong>8.</strong> When using GNSS in ETRS, tectonic motion must be considered.</p>
+        <div class="options">
+            <label><input type="radio" name="q8" value="T"> True</label>
+            <label><input type="radio" name="q8" value="F"> False</label>
+        </div>
+    </div>
+
+    <div class="question" id="q9-block">
+        <p><strong>9.</strong> For mapping, ETRS and ITRS can be treated as coincident.</p>
+        <div class="options">
+            <label><input type="radio" name="q9" value="T"> True</label>
+            <label><input type="radio" name="q9" value="F"> False</label>
+        </div>
+    </div>
+
+    <div class="question" id="q10-block">
+        <p><strong>10.</strong> Order of steps to convert GNSS → ITM is:</p>
+        <div class="options">
+            <label><input type="radio" name="q10" value="a"> a) Projection → Conversion → Helmert</label>
+            <label><input type="radio" name="q10" value="b"> b) Transformation → Projection → Conversion</label>
+            <label><input type="radio" name="q10" value="c"> c) Conversion → Projection → Transformation</label>
+            <label><input type="radio" name="q10" value="d"> d) Conversion → Transformation → Projection</label>
+        </div>
+    </div>
+
+    <div class="question" id="q11-block">
+        <p><strong>11.</strong> GNSS → Irish Grid requires:</p>
+        <div class="options">
+            <label><input type="radio" name="q11" value="a"> a) Simple translation</label>
+            <label><input type="radio" name="q11" value="b"> b) 7-parameter transformation + TM projection</label>
+            <label><input type="radio" name="q11" value="c"> c) Reprojection only</label>
+            <label><input type="radio" name="q11" value="d"> d) No transformation</label>
+        </div>
+    </div>
+
+    <div class="question" id="q12-block">
+        <p><strong>12.</strong> Scale factor on the Irish Grid Central Meridian is 0.99982.</p>
+        <div class="options">
+            <label><input type="radio" name="q12" value="T"> True</label>
+            <label><input type="radio" name="q12" value="F"> False</label>
+        </div>
+    </div>
+
+    <div class="question" id="q13-block">
+        <p><strong>13.</strong> Map scale factor becomes greater than one when:</p>
+        <div class="options">
+            <label><input type="radio" name="q13" value="a"> a) Approaching CM</label>
+            <label><input type="radio" name="q13" value="b"> b) Moving away from CM</label>
+            <label><input type="radio" name="q13" value="c"> c) On equator</label>
+            <label><input type="radio" name="q13" value="d"> d) On poles</label>
+        </div>
+    </div>
+
+    <div class="question" id="q14-block">
+        <p><strong>14.</strong> The primary purpose of a CRS is to:</p>
+        <div class="options">
+            <label><input type="radio" name="q14" value="a"> a) Provide a map style</label>
+            <label><input type="radio" name="q14" value="b"> b) Define Earth size</label>
+            <label><input type="radio" name="q14" value="c"> c) Reference geographic positions</label>
+            <label><input type="radio" name="q14" value="d"> d) Eliminate distortions</label>
+        </div>
+    </div>
+
+    <div class="question" id="q15-block">
+        <p><strong>15.</strong> What distinguishes ETRS89 from ITRS?</p>
+        <div class="options">
+            <label><input type="radio" name="q15" value="a"> a) Different ellipsoids</label>
+            <label><input type="radio" name="q15" value="b"> b) ETRS89 fixed to Eurasian Plate</label>
+            <label><input type="radio" name="q15" value="c"> c) ITRS uses Airy Modified</label>
+            <label><input type="radio" name="q15" value="d"> d) ETRS89 is dynamic</label>
+        </div>
+    </div>
+
+    <div class="question" id="q16-block">
+        <p><strong>16.</strong> The GPS reference system is:</p>
+        <div class="options">
+            <label><input type="radio" name="q16" value="a"> a) ETRS89</label>
+            <label><input type="radio" name="q16" value="b"> b) NAD83</label>
+            <label><input type="radio" name="q16" value="c"> c) WGS84</label>
+            <label><input type="radio" name="q16" value="d"> d) Airy 1830</label>
+        </div>
+    </div>
+
+    <div class="question" id="q17-block">
+        <p><strong>17.</strong> ITM stands for:</p>
+        <div class="options">
+            <label><input type="radio" name="q17" value="a"> a) Irish Total Mapping</label>
+            <label><input type="radio" name="q17" value="b"> b) Irish Transverse Mercator</label>
+            <label><input type="radio" name="q17" value="c"> c) Integrated Terrain Model</label>
+            <label><input type="radio" name="q17" value="d"> d) International TM</label>
+        </div>
+    </div>
+
+    <div class="question" id="q18-block">
+        <p><strong>18.</strong> The Geoid is:</p>
+        <div class="options">
+            <label><input type="radio" name="q18" value="a"> a) Mathematical ellipsoid</label>
+            <label><input type="radio" name="q18" value="b"> b) Equipotential gravity surface approximating MSL</label>
+            <label><input type="radio" name="q18" value="c"> c) Satellite surface</label>
+            <label><input type="radio" name="q18" value="d"> d) Sea level at all points</label>
+        </div>
+    </div>
+
+    <div class="question" id="q19-block">
+        <p><strong>19.</strong> Mean sea level is not perfect due to:</p>
+        <div class="options">
+            <label><input type="radio" name="q19" value="a"> a) Tides only</label>
+            <label><input type="radio" name="q19" value="b"> b) Constant global level</label>
+            <label><input type="radio" name="q19" value="c"> c) Variations in gravity and ocean conditions</label>
+            <label><input type="radio" name="q19" value="d"> d) GNSS error</label>
+        </div>
+    </div>
+
+    <div class="question" id="q20-block">
+        <p><strong>20.</strong> Europe uses ETRS89 instead of ITRS mainly to:</p>
+        <div class="options">
+            <label><input type="radio" name="q20" value="a"> a) Use a smaller ellipsoid</label>
+            <label><input type="radio" name="q20" value="b"> b) Avoid tectonic drift</label>
+            <label><input type="radio" name="q20" value="c"> c) Avoid WGS84</label>
+            <label><input type="radio" name="q20" value="d"> d) Improve mapping colour schemes</label>
+        </div>
+    </div>
+
+    <div class="question" id="q21-block">
+        <p><strong>21.</strong> Who maintains Ireland’s geodetic infrastructure?</p>
+        <div class="options">
+            <label><input type="radio" name="q21" value="a"> a) OSGB</label>
+            <label><input type="radio" name="q21" value="b"> b) Tailte Éireann</label>
+            <label><input type="radio" name="q21" value="c"> c) EU Commission</label>
+            <label><input type="radio" name="q21" value="d"> d) GSI</label>
+        </div>
+    </div>
+
+    <div class="question" id="q22-block">
+        <p><strong>22.</strong> ITM uses which datum?</p>
+        <div class="options">
+            <label><input type="radio" name="q22" value="a"> a) WGS84</label>
+            <label><input type="radio" name="q22" value="b"> b) ITRS</label>
+            <label><input type="radio" name="q22" value="c"> c) ETRS89</label>
+            <label><input type="radio" name="q22" value="d"> d) Airy Modified</label>
+        </div>
+    </div>
+
+    <div class="question" id="q23-block">
+        <p><strong>23.</strong> Reason ITM replaced Irish Grid:</p>
+        <div class="options">
+            <label><input type="radio" name="q23" value="a"> a) More colours</label>
+            <label><input type="radio" name="q23" value="b"> b) Lower accuracy</label>
+            <label><input type="radio" name="q23" value="c"> c) Non-GNSS compatibility</label>
+            <label><input type="radio" name="q23" value="d"> d) Too many coordinates</label>
+        </div>
+    </div>
+
+    <div class="question" id="q24-block">
+        <p><strong>24.</strong> Key difference between ITM and Irish Grid:</p>
+        <div class="options">
+            <label><input type="radio" name="q24" value="a"> a) Different map projections</label>
+            <label><input type="radio" name="q24" value="b"> b) ITM is geocentric</label>
+            <label><input type="radio" name="q24" value="c"> c) ING uses WGS84</label>
+            <label><input type="radio" name="q24" value="d"> d) ITM is 3D only</label>
+        </div>
+    </div>
+
+    <div class="question" id="q25-block">
+        <p><strong>25.</strong> Most suitable coordinate system for GPS surveying in Ireland:</p>
+        <div class="options">
+            <label><input type="radio" name="q25" value="a"> a) ING</label>
+            <label><input type="radio" name="q25" value="b"> b) ITRF2014</label>
+            <label><input type="radio" name="q25" value="c"> c) ETRS89 / ITM</label>
+            <label><input type="radio" name="q25" value="d"> d) OSGB36</label>
+        </div>
+    </div>
+
+    <div class="question" id="q26-block">
+        <p><strong>26.</strong> GNSS stands for:</p>
+        <div class="options">
+            <label><input type="radio" name="q26" value="a"> a) Global Network Survey System</label>
+            <label><input type="radio" name="q26" value="b"> b) Global Navigation Satellite System</label>
+            <label><input type="radio" name="q26" value="c"> c) General Navigation Survey Solution</label>
+            <label><input type="radio" name="q26" value="d"> d) Global Nautical Sat System</label>
+        </div>
+    </div>
+
+    <div class="question" id="q27-block">
+        <p><strong>27.</strong> EU-operated GNSS:</p>
+        <div class="options">
+            <label><input type="radio" name="q27" value="a"> a) GLONASS</label>
+            <label><input type="radio" name="q27" value="b"> b) GPS</label>
+            <label><input type="radio" name="q27" value="c"> c) Galileo</label>
+            <label><input type="radio" name="q27" value="d"> d) BeiDou</label>
+        </div>
+    </div>
+
+    <div class="question" id="q28-block">
+        <p><strong>28.</strong> Primary civilian GPS frequency:</p>
+        <div class="options">
+            <label><input type="radio" name="q28" value="a"> a) L2</label>
+            <label><input type="radio" name="q28" value="b"> b) L5</label>
+            <label><input type="radio" name="q28" value="c"> c) L1</label>
+            <label><input type="radio" name="q28" value="d"> d) S-band</label>
+        </div>
+    </div>
+
+    <div class="question" id="q29-block">
+        <p><strong>29.</strong> Russian GNSS:</p>
+        <div class="options">
+            <label><input type="radio" name="q29" value="a"> a) GLONASS</label>
+            <label><input type="radio" name="q29" value="b"> b) Galileo</label>
+            <label><input type="radio" name="q29" value="c"> c) BeiDou</label>
+            <label><input type="radio" name="q29" value="d"> d) NavIC</label>
+        </div>
+    </div>
+
+    <div class="question" id="q30-block">
+        <p><strong>30.</strong> Largest GNSS error source:</p>
+        <div class="options">
+            <label><input type="radio" name="q30" value="a"> a) Troposphere</label>
+            <label><input type="radio" name="q30" value="b"> b) Ionosphere</label>
+            <label><input type="radio" name="q30" value="c"> c) Satellite clock</label>
+            <label><input type="radio" name="q30" value="d"> d) Receiver noise</label>
+        </div>
+    </div>
+
+    <div class="question" id="q31-block">
+        <p><strong>31.</strong> Chinese GNSS:</p>
+        <div class="options">
+            <label><input type="radio" name="q31" value="a"> a) QZSS</label>
+            <label><input type="radio" name="q31" value="b"> b) BeiDou</label>
+            <label><input type="radio" name="q31" value="c"> c) NavIC</label>
+            <label><input type="radio" name="q31" value="d"> d) Galileo</label>
+        </div>
+    </div>
+
+    <div class="question" id="q32-block">
+        <p><strong>32.</strong> DGNSS purpose:</p>
+        <div class="options">
+            <label><input type="radio" name="q32" value="a"> a) Provide new ellipsoid</label>
+            <label><input type="radio" name="q32" value="b"> b) Improve accuracy using corrections</label>
+            <label><input type="radio" name="q32" value="c"> c) Eliminate multipath</label>
+            <label><input type="radio" name="q32" value="d"> d) Replace SBAS</label>
+        </div>
+    </div>
+
+    <div class="question" id="q33-block">
+        <p><strong>33.</strong> Dual-frequency mitigates:</p>
+        <div class="options">
+            <label><input type="radio" name="q33" value="a"> a) Troposphere</label>
+            <label><input type="radio" name="q33" value="b"> b) Multipath</label>
+            <label><input type="radio" name="q33" value="c"> c) Ionosphere</label>
+            <label><input type="radio" name="q33" value="d"> d) Satellite geometry</label>
+        </div>
+    </div>
+
+    <div class="question" id="q34-block">
+        <p><strong>34.</strong> GPS military encrypted signal:</p>
+        <div class="options">
+            <label><input type="radio" name="q34" value="a"> a) L1 C/A</label>
+            <label><input type="radio" name="q34" value="b"> b) L2C</label>
+            <label><input type="radio" name="q34" value="c"> c) P(Y)</label>
+            <label><input type="radio" name="q34" value="d"> d) L5</label>
+        </div>
+    </div>
+
+    <div class="question" id="q35-block">
+        <p><strong>35.</strong> GPS constellation nominally contains:</p>
+        <div class="options">
+            <label><input type="radio" name="q35" value="a"> a) 12</label>
+            <label><input type="radio" name="q35" value="b"> b) 24</label>
+            <label><input type="radio" name="q35" value="c"> c) 48</label>
+            <label><input type="radio" name="q35" value="d"> d) 60</label>
+        </div>
+    </div>
+
+    <div class="question" id="q36-block">
+        <p><strong>36.</strong> SBAS used in Europe:</p>
+        <div class="options">
+            <label><input type="radio" name="q36" value="a"> a) WAAS</label>
+            <label><input type="radio" name="q36" value="b"> b) MSAS</label>
+            <label><input type="radio" name="q36" value="c"> c) EGNOS</label>
+            <label><input type="radio" name="q36" value="d"> d) GAGAN</label>
+        </div>
+    </div>
+
+    <div class="question" id="q37-block">
+        <p><strong>37.</strong> Control segment role:</p>
+        <div class="options">
+            <label><input type="radio" name="q37" value="a"> a) Build satellites</label>
+            <label><input type="radio" name="q37" value="b"> b) Monitor satellites &amp; upload corrections</label>
+            <label><input type="radio" name="q37" value="c"> c) Perform mapping</label>
+            <label><input type="radio" name="q37" value="d"> d) Provide user equipment</label>
+        </div>
+    </div>
+
+    <div class="question" id="q38-block">
+        <p><strong>38.</strong> Japan’s regional GNSS:</p>
+        <div class="options">
+            <label><input type="radio" name="q38" value="a"> a) QZSS</label>
+            <label><input type="radio" name="q38" value="b"> b) BeiDou</label>
+            <label><input type="radio" name="q38" value="c"> c) GLONASS</label>
+            <label><input type="radio" name="q38" value="d"> d) IRNSS</label>
+        </div>
+    </div>
+
+    <div class="question" id="q39-block">
+        <p><strong>39.</strong> Signal reflection error is called:</p>
+        <div class="options">
+            <label><input type="radio" name="q39" value="a"> a) Refraction</label>
+            <label><input type="radio" name="q39" value="b"> b) Multipath</label>
+            <label><input type="radio" name="q39" value="c"> c) Zenith delay</label>
+            <label><input type="radio" name="q39" value="d"> d) Geoid separation</label>
+        </div>
+    </div>
+
+    <div class="question" id="q40-block">
+        <p><strong>40.</strong> Technique giving cm-level accuracy:</p>
+        <div class="options">
+            <label><input type="radio" name="q40" value="a"> a) SBAS</label>
+            <label><input type="radio" name="q40" value="b"> b) DGPS</label>
+            <label><input type="radio" name="q40" value="c"> c) RTK</label>
+            <label><input type="radio" name="q40" value="d"> d) SPP</label>
+        </div>
+    </div>
+
+    <div class="question" id="q41-block">
+        <p><strong>41.</strong> Multi-GNSS advantage:</p>
+        <div class="options">
+            <label><input type="radio" name="q41" value="a"> a) Higher cost</label>
+            <label><input type="radio" name="q41" value="b"> b) More satellites → better accuracy</label>
+            <label><input type="radio" name="q41" value="c"> c) Worse geometry</label>
+            <label><input type="radio" name="q41" value="d"> d) Lower reliability</label>
+        </div>
+    </div>
+
+    <div class="question" id="q42-block">
+        <p><strong>42.</strong> Dual-frequency mitigates which error?</p>
+        <div class="options">
+            <label><input type="radio" name="q42" value="a"> a) Multipath</label>
+            <label><input type="radio" name="q42" value="b"> b) Ionosphere</label>
+            <label><input type="radio" name="q42" value="c"> c) Satellite clock</label>
+            <label><input type="radio" name="q42" value="d"> d) Orbit error</label>
+        </div>
+    </div>
+
+    <div class="question" id="q43-block">
+        <p><strong>43.</strong> India’s GNSS system:</p>
+        <div class="options">
+            <label><input type="radio" name="q43" value="a"> a) QZSS</label>
+            <label><input type="radio" name="q43" value="b"> b) IRNSS / NavIC</label>
+            <label><input type="radio" name="q43" value="c"> c) GLONASS</label>
+            <label><input type="radio" name="q43" value="d"> d) LORAN</label>
+        </div>
+    </div>
+
+    <div class="question" id="q44-block">
+        <p><strong>44.</strong> Main benefit of multi-GNSS receivers:</p>
+        <div class="options">
+            <label><input type="radio" name="q44" value="a"> a) Uses fewer satellites</label>
+            <label><input type="radio" name="q44" value="b"> b) Improves accuracy &amp; availability</label>
+            <label><input type="radio" name="q44" value="c"> c) Removes need for antennas</label>
+            <label><input type="radio" name="q44" value="d"> d) Reduces ellipsoid size</label>
+        </div>
+    </div>
+
+    <div class="question" id="q45-block">
+        <p><strong>45.</strong> Modernized civilian GPS signal:</p>
+        <div class="options">
+            <label><input type="radio" name="q45" value="a"> a) P(Y)</label>
+            <label><input type="radio" name="q45" value="b"> b) L1 C/A</label>
+            <label><input type="radio" name="q45" value="c"> c) L2C</label>
+            <label><input type="radio" name="q45" value="d"> d) M-code</label>
+        </div>
+    </div>
+
+    <div class="question" id="q46-block">
+        <p><strong>46.</strong> Minimum satellites for 3D position:</p>
+        <div class="options">
+            <label><input type="radio" name="q46" value="a"> a) 2</label>
+            <label><input type="radio" name="q46" value="b"> b) 3</label>
+            <label><input type="radio" name="q46" value="c"> c) 4</label>
+            <label><input type="radio" name="q46" value="d"> d) 6</label>
+        </div>
+    </div>
+
+    <div class="question" id="q47-block">
+        <p><strong>47.</strong> Dual-frequency mitigates:</p>
+        <div class="options">
+            <label><input type="radio" name="q47" value="a"> a) Multipath</label>
+            <label><input type="radio" name="q47" value="b"> b) Ionosphere</label>
+            <label><input type="radio" name="q47" value="c"> c) Satellite failure</label>
+            <label><input type="radio" name="q47" value="d"> d) Troposphere</label>
+        </div>
+    </div>
+
+    <div class="question" id="q48-block">
+        <p><strong>48.</strong> Highest positional accuracy for geodetic control:</p>
+        <div class="options">
+            <label><input type="radio" name="q48" value="a"> a) RTK</label>
+            <label><input type="radio" name="q48" value="b"> b) Static GNSS</label>
+            <label><input type="radio" name="q48" value="c"> c) SBAS</label>
+            <label><input type="radio" name="q48" value="d"> d) DGPS</label>
+        </div>
+    </div>
+
+    <div class="question" id="q49-block">
+        <p><strong>49.</strong> Static GNSS session length for mm accuracy:</p>
+        <div class="options">
+            <label><input type="radio" name="q49" value="a"> a) 5 minutes</label>
+            <label><input type="radio" name="q49" value="b"> b) 20 minutes</label>
+            <label><input type="radio" name="q49" value="c"> c) Several hours</label>
+            <label><input type="radio" name="q49" value="d"> d) 1 second</label>
+        </div>
+    </div>
+
+    <div class="question" id="q50-block">
+        <p><strong>50.</strong> Real-time cm accuracy method:</p>
+        <div class="options">
+            <label><input type="radio" name="q50" value="a"> a) DGPS</label>
+            <label><input type="radio" name="q50" value="b"> b) RTK</label>
+            <label><input type="radio" name="q50" value="c"> c) SBAS</label>
+            <label><input type="radio" name="q50" value="d"> d) SPP</label>
+        </div>
+    </div>
+
+    <div class="question" id="q51-block">
+        <p><strong>51.</strong> Network RTK advantage:</p>
+        <div class="options">
+            <label><input type="radio" name="q51" value="a"> a) Fewer reference stations</label>
+            <label><input type="radio" name="q51" value="b"> b) Larger coverage &amp; reliability</label>
+            <label><input type="radio" name="q51" value="c"> c) No base stations at all</label>
+            <label><input type="radio" name="q51" value="d"> d) Works without satellites</label>
+        </div>
+    </div>
+
+    <div class="question" id="q52-block">
+        <p><strong>52.</strong> Most critical feature in high-precision GNSS receiver:</p>
+        <div class="options">
+            <label><input type="radio" name="q52" value="a"> a) Colour screen</label>
+            <label><input type="radio" name="q52" value="b"> b) Multi-frequency capability</label>
+            <label><input type="radio" name="q52" value="c"> c) Battery size</label>
+            <label><input type="radio" name="q52" value="d"> d) Weight</label>
+        </div>
+    </div>
+
+    <div class="question" id="q53-block">
+        <p><strong>53.</strong> Typical reference-station receiver:</p>
+        <div class="options">
+            <label><input type="radio" name="q53" value="a"> a) Smartphone-grade</label>
+            <label><input type="radio" name="q53" value="b"> b) Handheld hiking GPS</label>
+            <label><input type="radio" name="q53" value="c"> c) Geodetic-grade receiver</label>
+            <label><input type="radio" name="q53" value="d"> d) Automobile navigation unit</label>
+        </div>
+    </div>
+
+    <div class="question" id="q54-block">
+        <p><strong>54.</strong> Why geodetic antennas are larger:</p>
+        <div class="options">
+            <label><input type="radio" name="q54" value="a"> a) For style</label>
+            <label><input type="radio" name="q54" value="b"> b) Reduce multipath</label>
+            <label><input type="radio" name="q54" value="c"> c) Lower cost</label>
+            <label><input type="radio" name="q54" value="d"> d) To look scientific</label>
+        </div>
+    </div>
+
+    <div class="question" id="q55-block">
+        <p><strong>55.</strong> Key antenna factor in urban environments:</p>
+        <div class="options">
+            <label><input type="radio" name="q55" value="a"> a) Weight</label>
+            <label><input type="radio" name="q55" value="b"> b) Multipath suppression</label>
+            <label><input type="radio" name="q55" value="c"> c) Colour</label>
+            <label><input type="radio" name="q55" value="d"> d) Price</label>
+        </div>
+    </div>
+
+    <div class="question" id="q56-block">
+        <p><strong>56.</strong> Primary civilian positioning signal:</p>
+        <div class="options">
+            <label><input type="radio" name="q56" value="a"> a) L1 C/A</label>
+            <label><input type="radio" name="q56" value="b"> b) L2P</label>
+            <label><input type="radio" name="q56" value="c"> c) M-code</label>
+            <label><input type="radio" name="q56" value="d"> d) P(Y)</label>
+        </div>
+    </div>
+
+    <div class="question" id="q57-block">
+        <p><strong>57.</strong> Advantage of L5 signal:</p>
+        <div class="options">
+            <label><input type="radio" name="q57" value="a"> a) Narrow bandwidth</label>
+            <label><input type="radio" name="q57" value="b"> b) Poor multipath resistance</label>
+            <label><input type="radio" name="q57" value="c"> c) Wide bandwidth → better accuracy</label>
+            <label><input type="radio" name="q57" value="d"> d) No use for surveying</label>
+        </div>
+    </div>
+
+    <div class="question" id="q58-block">
+        <p><strong>58.</strong> Military-only encrypted GPS signal:</p>
+        <div class="options">
+            <label><input type="radio" name="q58" value="a"> a) L1 C/A</label>
+            <label><input type="radio" name="q58" value="b"> b) L2C</label>
+            <label><input type="radio" name="q58" value="c"> c) P(Y)</label>
+            <label><input type="radio" name="q58" value="d"> d) L5</label>
+        </div>
+    </div>
+
+    <div class="question" id="q59-block">
+        <p><strong>59.</strong> Modernized civilian GPS signal improving performance:</p>
+        <div class="options">
+            <label><input type="radio" name="q59" value="a"> a) L2C</label>
+            <label><input type="radio" name="q59" value="b"> b) M-code</label>
+            <label><input type="radio" name="q59" value="c"> c) P(Y)</label>
+            <label><input type="radio" name="q59" value="d"> d) Loran-C</label>
+        </div>
+    </div>
+
+    <div class="question" id="q60-block">
+        <p><strong>60.</strong> Role of SBAS in surveying:</p>
+        <div class="options">
+            <label><input type="radio" name="q60" value="a"> a) Provide raw GNSS signals</label>
+            <label><input type="radio" name="q60" value="b"> b) Provide corrections for improved accuracy, integrity, reliability</label>
+            <label><input type="radio" name="q60" value="c"> c) Replace GNSS</label>
+            <label><input type="radio" name="q60" value="d"> d) Build satellites</label>
+        </div>
+    </div>
+
+    <button type="button" onclick="gradeQuiz()">Grade Quiz</button>
+</form>
+
+<div id="result"></div>
+
+<script>
+    const answerKey = {
+        q1: "T",
+        q2: "b",
+        q3: "c",
+        q4: "T",
+        q5: "c",
+        q6: "F",
+        q7: "b",
+        q8: "T",
+        q9: "T",
+        q10: "b",
+        q11: "b",
+        q12: "T",
+        q13: "b",
+        q14: "c",
+        q15: "b",
+        q16: "c",
+        q17: "b",
+        q18: "b",
+        q19: "c",
+        q20: "b",
+        q21: "b",
+        q22: "c",
+        q23: "c",
+        q24: "b",
+        q25: "c",
+        q26: "b",
+        q27: "c",
+        q28: "c",
+        q29: "a",
+        q30: "b",
+        q31: "b",
+        q32: "b",
+        q33: "c",
+        q34: "c",
+        q35: "b",
+        q36: "c",
+        q37: "b",
+        q38: "a",
+        q39: "b",
+        q40: "c",
+        q41: "b",
+        q42: "b",
+        q43: "b",
+        q44: "b",
+        q45: "c",
+        q46: "c",
+        q47: "b",
+        q48: "b",
+        q49: "c",
+        q50: "b",
+        q51: "b",
+        q52: "b",
+        q53: "c",
+        q54: "b",
+        q55: "b",
+        q56: "a",
+        q57: "c",
+        q58: "c",
+        q59: "a",
+        q60: "b"
+    };
+
+    function gradeQuiz() {
+        let score = 0;
+        const total = 60;
+
+        // clear previous highlighting
+        document.querySelectorAll('.question').forEach(q => {
+            q.classList.remove('correct', 'incorrect');
+        });
+
+        for (let i = 1; i <= total; i++) {
+            const qName = "q" + i;
+            const block = document.getElementById(qName + "-block");
+            const selected = document.querySelector('input[name="' + qName + '"]:checked');
+            const correct = answerKey[qName];
+
+            if (selected) {
+                if (selected.value === correct) {
+                    score++;
+                    block.classList.add('correct');
+                } else {
+                    block.classList.add('incorrect');
+                }
+            } else {
+                // unanswered counts as incorrect
+                block.classList.add('incorrect');
+            }
+        }
+
+        const percent = (score / total * 100).toFixed(1);
+        document.getElementById("result").textContent =
+            "Score: " + score + " / " + total + " (" + percent + "%)";
+    }
+</script>
+
+</body>
+</html>

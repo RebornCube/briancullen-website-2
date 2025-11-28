@@ -57,9 +57,16 @@
                 <textarea id="message" name="message" rows="5" required></textarea>
 
                 <button type="reset">Reset</button> 
-                <button type="submit">Send Message</button>
+                <button type="submit" onclick="submitForm()">Send Message</button>
                 
             </form>
+            <div id="overlay" class="hidden">
+                <div id="popupBox" class="popup-box">
+                    <h2>Form submitted!</h2>
+                    <p>Your form was sent successfully.</p>
+                    <button onclick="submitForm()">Close</button>
+                </div>
+            </div>
         </div>
 
     </main>

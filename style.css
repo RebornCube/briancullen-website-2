@@ -1,7 +1,9 @@
+/* Border Radius for website for quick changes to border radius*/
 :root{
   --border-radius: 20px 5px 20px 5px;
 }
 
+/* Colour Palette  for website for quick changes to colours*/
 :root {
     --bg-dark: hsl(7 100% 2%);
     --bg: hsl(17 100% 4%);
@@ -44,7 +46,7 @@ body {
     padding-bottom: 10rem; /* must match footer height */
 }
 
-
+/* Main Content Area using grid*/
 main {
     display: grid;
     grid-template-rows: auto;
@@ -54,7 +56,7 @@ main {
 
 .profile-pic {
     width: 100%;
-    max-width: 800px;
+    max-width: 30rem
 }
 
 h1 {
@@ -270,7 +272,7 @@ textarea {
     filter: invert(1) brightness(200%);  
 }
 
-footer {
+footer { /* fixed footer kept outside grid layout, if content isn't long enough always sticks at bottom of screen*/
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -292,6 +294,34 @@ footer {
     justify-content: center;
     align-items: center;
 }
+
+.hidden {
+    display: none;
+}
+
+#popupBox {
+    justify-content: center;
+    align-items: center;
+    background: hsl(30 68% 64%);
+    color: white;
+    padding: 2rem;
+    margin-top: 1rem;
+    border-radius: 12px;
+    width: 300px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    transition: opacity 0.3s ease;
+}
+.popup-box {
+  background: hsl(30 68% 64%);
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
 /* Tablet Styles */
 @media (min-width: 768px) {
     .boxes {
@@ -304,6 +334,7 @@ footer {
         text-align: left;
         align-items: flex-start;
         justify-items: flex-start;
+        max-width: 30rem;
     }
     .hero-text p {
         text-align: left;
@@ -318,6 +349,13 @@ footer {
 
 /* Desktop Styles */
 @media (min-width: 1280px) {
+
+    .hero {
+        margin-top: 1rem;
+    }
+    /*.profile-pic {
+        clip-path: circle(50%);
+    }*/
     nav {
     position: relative;
     right: 0;

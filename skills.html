@@ -50,5 +50,27 @@
         </div>
         <p>&copy; 2025 Brian Cullen</p>
     </footer>
+    <script>
+        one = prompt("Enter a number");
+        two = prompt("Enter a second number");
+        three = prompt("Enter a second number");
+
+        if (one >= two && one >= three) {
+            largest = one;
+        } else if (two >= one && two >= three) {
+            largest = two;
+        } else {
+            largest = three;
+        }
+        if (one <= two && one <= three) {
+            smallest = one;
+        } else if (two <= one && two <= three) {
+            smallest = two;
+        } else {
+            smallest = three;
+        }
+        document.write("The largest number is " + largest + "<br>");
+        document.write("The smallest number is " + smallest);
+    </script>
 </body>
 </html>

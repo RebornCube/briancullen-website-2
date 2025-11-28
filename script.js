@@ -7,8 +7,10 @@ function closeSidebar() {
     navbar.classList.remove('show')
 }
 function submitForm() {
-    document.getElementById('popupBox').classList.toggle('hidden');
+    document.getElementById('successDialog').showModal();
 }
 
 const d = new Date().getFullYear();
 document.getElementById("currentYear").innerHTML = d;
+
+

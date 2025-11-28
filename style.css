@@ -211,7 +211,7 @@ button{
     align-items: center;
     gap: 1rem;
 }
-
+/* Contact Form Styles */
 form {
     display: flex;
     flex-direction: column;
@@ -221,13 +221,17 @@ form {
     width: 100%;
     max-width: 700px;
 }
+
 label {
+    display: block;
     font-size: 1.25rem;
     color: var(--text);
     width: 80%;
     text-align: left;
 }
-input, textarea {
+
+input,
+textarea {
     width: 80%;
     padding: 0.5rem;
     border: 1px solid var(--border-muted);
@@ -235,9 +239,29 @@ input, textarea {
     background-color: white;
     color: black;
 }
+
 textarea {
     min-height: 500px;
-}   
+}
+
+
+.radio-group {
+    
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    align-items: flex-start;
+}
+
+.radio-group label {
+    width: auto;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+}
+  
 .contact-me p {
     margin-bottom: 2rem;
 }
@@ -299,27 +323,18 @@ footer { /* fixed footer kept outside grid layout, if content isn't long enough 
     display: none;
 }
 
-#popupBox {
-    justify-content: center;
-    align-items: center;
-    background: hsl(30 68% 64%);
-    color: white;
+#successDialog {
+    margin: auto;
+    border-radius: var(--border-radius);
     padding: 2rem;
-    margin-top: 1rem;
-    border-radius: 12px;
-    width: 300px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.4);
-    transition: opacity 0.3s ease;
-}
-.popup-box {
-  background: hsl(30 68% 64%);
-  color: white;
-  padding: 2rem;
-  border-radius: 12px;
-  max-width: 400px;
-  width: 90%;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  text-align: center;
+    background-color: var(--info);
+    color: var(--text);
+    border: 1px solid var(--border);
+
+    &::backdrop {
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(2px);
+    }
 }
 
 /* Tablet Styles */

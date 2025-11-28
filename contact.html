@@ -46,10 +46,21 @@
                 <input type="email" id="email" name="email" required>
 
                 <label for="topic">General Topic</label>
-                <label>Project Enquiry<input type="radio" name="topic" value="Project Enquiry"/></label>
-                <label>Collaboration<input type="radio" name="topic" value="Collaboration"/></label>
-                <input type="radio" name="topic" value="Other"/> Other
-                
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="topic" value="Project Enquiry">
+                        Project Enquiry
+                    </label>
+                    <label>
+                        <input type="radio" name="topic" value="Collaboration">
+                        Collaboration
+                    </label>
+                    <label>
+                        <input type="radio" name="topic" value="Other">
+                        Other
+                    </label>
+                </div>
+
                 <label for="subject">Subject</label>
                 <input type="text" id="subject" name="subject" required>
 
@@ -58,15 +69,12 @@
 
                 <button type="reset">Reset</button> 
                 <button type="submit" onclick="submitForm()">Send Message</button>
-                
             </form>
-            <div id="overlay" class="hidden">
-                <div id="popupBox" class="popup-box">
-                    <h2>Form submitted!</h2>
-                    <p>Your form was sent successfully.</p>
-                    <button onclick="submitForm()">Close</button>
-                </div>
-            </div>
+
+            <dialog id="successDialog" closedby="any">
+                <p>Please complete contact in your preferred email.</p>
+                <button onclick="document.getElementById('successDialog').close();">Close</button>
+            </dialog>
         </div>
 
     </main>

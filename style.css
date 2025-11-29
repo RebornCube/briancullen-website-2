@@ -1,6 +1,7 @@
-/* Border Radius for website for quick changes to border radius*/
+/* Border Radius for website for quick changes to border radius, also blur variable*/
 :root{
   --border-radius: 20px 5px 20px 5px;
+  --blur: blur(2px);
 }
 
 /* Colour Palette  for website for quick changes to colours*/
@@ -143,6 +144,7 @@ nav.show ~ #overlay {
     inset: 0;
     z-index: 8;
     display: none;
+    backdrop-filter: var(--blur);
 }
 
 .boxes {
@@ -322,20 +324,21 @@ footer { /* fixed footer kept outside grid layout, if content isn't long enough 
 .hidden {
     display: none;
 }
-
-#successDialog {
+/* Dialog Styles - use of dialod found on youtube https://youtu.be/HgNDii20FG4?si=rEoq2jXuSmGZCznk */
+#infoDialog {
     margin: auto;
     border-radius: var(--border-radius);
     padding: 2rem;
     background-color: var(--info);
-    color: var(--text);
+    color: black;
     border: 1px solid var(--border);
-
-    &::backdrop {
-        background: rgba(0, 0, 0, 0.6);
-        backdrop-filter: blur(2px);
-    }
 }
+/* blur background of any dialog */
+dialog::backdrop {                           /* found on youtube https://youtu.be/HgNDii20FG4?si=rEoq2jXuSmGZCznk */
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: var(--blur);
+    }
+
 
 /* Tablet Styles */
 @media (min-width: 768px) {

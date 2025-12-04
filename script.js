@@ -19,3 +19,18 @@ function closeModal(){
 // get year and insert it into footer
 const d = new Date().getFullYear();
 document.getElementById("currentYear").innerHTML = d;
+
+function checkFormCompletion() {
+    const name = document.getElementsByName('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const submitButton = document.getElementById('submitBtn');
+    if (name && email && message) {
+        submitButton.disabled = false;
+        name.style.fontColor = "red";
+    } else {
+        submitButton.disabled = true;
+        
+    }   
+
+}

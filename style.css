@@ -97,6 +97,11 @@ nav {
     border-left: 1px solid var(--highlight);
     transition: right 300ms ease-out;
     }
+
+nav li img {
+    height: 2rem;
+    width: auto;
+}
 nav ul {
     list-style: none;
     width: 100%;
@@ -105,9 +110,10 @@ nav ul {
 }
 nav a {
     display: flex;
+    
     text-decoration: none;
     color: var(--text);
-    padding: 1em 2em;
+    padding: 1rem 2em;
     width: 100%;
     }
 nav a.accent-link {
@@ -144,6 +150,16 @@ nav.show ~ #overlay {
     z-index: 8;
     display: none;
     backdrop-filter: var(--blur);
+}
+
+.homeLogo-container {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    z-index: 11;
+}
+.homeLogo-container img {
+    height: 3rem;
 }
 
 .box-container {
@@ -194,7 +210,6 @@ nav.show ~ #overlay {
   align-items: center;
   gap: 0.5rem;
 }
-
 .button {
     text-decoration: none;
     background-color: var(--secondary);
@@ -203,7 +218,7 @@ nav.show ~ #overlay {
     border-radius: var(--border-radius);
     font-weight: bold;
 }
-button{
+button {
     text-decoration: none;
     background-color: var(--secondary);
     color: var(--bg-dark);
@@ -213,7 +228,7 @@ button{
     border: none;
     cursor: pointer;
 }
-/* Contact Me Section */
+/* Contact Me page Section */
 .contact-me {
     display: flex;
     flex-direction: column;
@@ -230,8 +245,10 @@ form {
     align-items: center;
     width: 100%;
     max-width: 700px;
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius);
+    margin: 0 1rem 0 1rem;;
 }
-
 label {
     display: block;
     font-size: 1.25rem;
@@ -239,9 +256,7 @@ label {
     width: 80%;
     text-align: left;
 }
-
-input,
-textarea {
+input, textarea { /* styles for text input and textarea */
     width: 80%;
     padding: 0.5rem;
     border: 1px solid var(--border-muted);
@@ -249,12 +264,9 @@ textarea {
     background-color: white;
     color: black;
 }
-
 textarea {
     min-height: 500px;
 }
-
-
 .radio-group {
     
     display: flex;
@@ -262,7 +274,6 @@ textarea {
     gap: 0.25rem;
     align-items: flex-start;
 }
-
 .radio-group label {
     width: auto;
     font-size: 1rem;
@@ -270,8 +281,7 @@ textarea {
     align-items: center;
     gap: 0.5rem;
     white-space: nowrap;
-}
-  
+}  
 .contact-me p {
     margin-bottom: 2rem;
 }
@@ -356,8 +366,7 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
     grid-template-areas: 
         "skills-list"
         "Previous-jobs"
-        "education-section";
-    
+        "education-section";  
 }
 .experience-section li {
     list-style: none;
@@ -500,6 +509,7 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
     list-style: none;
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
     }
     nav .home-li {
     margin-right: auto;

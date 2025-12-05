@@ -8,7 +8,7 @@
 /* Colour Palette for website, essential for quick changes to colours*/
 :root {
     --bg-dark: hsl(7 100% 2%);
-    --bg: hsl(17 100% 5%);
+    --bg: hsl(17 100% 4.5%);
     --bg-light: hsl(27 100% 7%);
     --text: hsl(29 100% 90%);
     --text-muted: hsl(30 63% 64%);
@@ -189,7 +189,7 @@ header {
     transition: background-color 0.3s ease; /* smooth background color transition */
 }
 .box:hover {
-    background-color: var(--secondary);
+    background-color: var(--highlight);
 }
 .box:active {
     background-color: var(--success);
@@ -325,7 +325,7 @@ footer { /* fixed footer kept outside grid layout, if content isn't long enough 
     flex-direction: column;
     gap: 0.5rem;
     padding: 1rem;
-    border-top: 1px solid var(--highlight);
+    border-top: 1px solid var(--border);
     color: var(--text-muted);
     background-color: var(--bg);
 }
@@ -514,19 +514,13 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
     }
     nav ul {
     list-style: none;
-    display: flex;
     flex-direction: row;
     
     }
     nav li{
-        display: flex;
-        font-size: 1rem;
+        display: flex; /* fixes small gap */
     }
     nav a {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    text-decoration: none;
     transition: background-color 0.3s ease; /* smooth background color transition */
     }
     nav a.active-link {

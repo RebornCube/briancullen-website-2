@@ -1,13 +1,14 @@
 /* Border Radius for website for quick changes to border radius, also blur variable*/
 :root{
-  --border-radius: 20px 5px 20px 5px;
+  --border-radius: 5px 5px 5px 5px;
+  --button-border-radius: 20px 5px 20px 5px;
   --blur: blur(2px);
 }
 
-/* Colour Palette  for website for quick changes to colours*/
+/* Colour Palette for website, essential for quick changes to colours*/
 :root {
     --bg-dark: hsl(7 100% 2%);
-    --bg: hsl(17 100% 4%);
+    --bg: hsl(17 100% 5%);
     --bg-light: hsl(27 100% 7%);
     --text: hsl(29 100% 90%);
     --text-muted: hsl(30 63% 64%);
@@ -98,10 +99,7 @@ nav {
     transition: right 300ms ease-out;
     }
 
-nav li img {
-    height: 2rem;
-    width: auto;
-}
+
 nav ul {
     list-style: none;
     width: 100%;
@@ -152,14 +150,14 @@ nav.show ~ #overlay {
     backdrop-filter: var(--blur);
 }
 
-.homeLogo-container {
-    position: absolute;
-    top: 0.5rem;
-    left: 0.5rem;
-    z-index: 11;
+header {
+    display: flex;
+    justify-content: space-between;
 }
+
+
 .homeLogo-container img {
-    height: 3rem;
+    height: 5rem;
 }
 
 .box-container {
@@ -188,7 +186,7 @@ nav.show ~ #overlay {
     border-radius: var(--border-radius);
     border: 1px solid var(--border);
     border-top: var(--highlight) 1px solid;
-    transition: background-color 0.3s ease, /* smooth background color transition */
+    transition: background-color 0.3s ease; /* smooth background color transition */
 }
 .box:hover {
     background-color: var(--secondary);
@@ -215,7 +213,7 @@ nav.show ~ #overlay {
     background-color: var(--secondary);
     color: var(--bg-dark);
     padding: 0.75rem 1.5rem;
-    border-radius: var(--border-radius);
+    border-radius: var(--button-border-radius);
     font-weight: bold;
 }
 button {
@@ -223,7 +221,7 @@ button {
     background-color: var(--secondary);
     color: var(--bg-dark);
     padding: 0.75rem 1.5rem;
-    border-radius: var(--border-radius);
+    border-radius: var(--button-border-radius);
     font-weight: bold;
     border: none;
     cursor: pointer;
@@ -495,31 +493,39 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
     /*.profile-pic {
         clip-path: circle(50%);
     }*/
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+    }   
     nav {
-    position: relative;
-    right: 0;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
     border-left: none;
     height: auto;
-    width: 100%;
-    border-bottom: 1px solid var(--highlight);
+    width: auto;
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
     transition: none;
+    display: flex;
+    align-items: center;
     
     }
     nav ul {
     list-style: none;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    
     }
-    nav .home-li {
-    margin-right: auto;
-    }
-    /*removes small gap at bottom of nav */
     nav li{
         display: flex;
+        font-size: 1rem;
     }
     nav a {
     display: flex;
+    align-items: center;
+    height: 100%;
     text-decoration: none;
     transition: background-color 0.3s ease; /* smooth background color transition */
     }

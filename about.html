@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>About</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="homeLogo-container">
+            <a href="index.html">
+                <img src="images/ChatGPT Image Dec 4, 2025, 05_08_15 PM.png" alt="Home Logo">
+            </a>
+        </div>
+        <div class="sidebar-btn-container">
+            <button class="openSidebar" onclick="openSidebar()">
+                <img src="icons/menu_40dp_C9C9C9_FILL0_wght300_GRAD0_opsz40.svg" alt="Menu Icon">
+            </button>
+        </div>
+        <nav id="navbar">
+            <ul>
+                <li>
+                    <button class="closeSidebar" onclick="closeSidebar()">
+                        <img src="icons/close_40dp_C9C9C9_FILL0_wght300_GRAD0_opsz40.svg" alt="Close Menu">
+                    </button>
+                </li>
+                <li class="" ><a href="index.html" >Home</a></li>
+                <li><a href="about.html" class="active-link">About</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="mcq.html">Spatial Data MCQ</a></li>
+                <li><a href="contact.html" class="accent-link">Contact</a></li>
+            </ul>
+        </nav>
+        <div id="overlay" onclick="closeSidebar()"></div>
+    </header>
+    
+    <main>
+        <section class="title-section">
+            <h1>About Me</h1>
+            <p>Hi, I'm Brian Cullen — a GIS Analyst, MSc student in Geographic Information Science, and someone who loves turning complex spatial data into meaningful, accessible solutions. I work across GIS automation, field data collection, network analysis, and web-based mapping, with a strong focus on building elegant, reliable workflows.</p>
+            <p>I'm currently based in Ireland, working in the Environmental Planning & Renewables (EPR) sector of RPS where I support high-impact geospatial projects.</p>
+        </section>
+        <div class="about-me-section">
+            <div class="What-I-do">
+                <h2>What I Do</h2>
+                <p>With a solid foundation in GIS and programming, I specialize in creating efficient geospatial solutions that streamline workflows and enhance data visualization. My expertise includes:</p>
+                <ul>
+                    <li>GIS Analysis & Mapping</li>
+                    <li>Python Scripting & Automation</li>
+                    <li>Web Mapping & Application Development</li>
+                    <li>Spatial Data Management</li>
+                </ul>
+            </div>
+            <div class="My-Interests">
+                <h2>My Interests</h2>
+                <p>Beyond my professional work, I'm passionate about exploring the intersection of technology and geography. I enjoy:</p>
+                <ul>
+                    <li>Learning new programming languages and frameworks</li>
+                    <li>Experimenting with data visualization techniques</li>
+                    <li>Engaging with the GIS community through forums and meetups</li>
+                    <li>Staying updated on the latest trends in geospatial technology</li>
+                </ul>
+            </div>
+            <div class="Outside-of-Work">
+                <h2>Outside of Work</h2>
+                <p>When I'm not immersed in GIS projects, I enjoy:</p>
+                <ul>
+                    <li>I'm a big fan of music, I enjoy playing music and learning new instruments</li>
+                    <li>I enjoy motor racing, especially Formula 1 and the Le Mans 24hr</li>
+                    <li>When I'm not coding or analysing maps, you'll probably find me chilling in front of the tv</li>
+                </ul>
+            </div>
+            <div class="Fun-Facts">
+                <h2>Fun Facts</h2>
+                <p>Here are a few fun facts about me:</p>
+                <ul>
+                    <li>I have two dogs — their names are Lady and Stella, and they think they own the house (they're probably right)</li>
+                    <li>The world population the year I was born was roughly 4.85 billion — today it's around 8+ billion, so… a few more neighbours now</li>
+                    <li>My morning ritual: Coffee. Then more coffee</li>
+                    <li>I remember life before the internet and I lived through dial-up</li>
+                </ul>
+            </div>
+        </div>
+        <div class="contact-section">
+            <h2>Interested in Collaborating?</h2>
+            <p>Whether it's geospatial analysis interactive maps, or data visualisation, I'd love to hear from you!</p>
+            <a href="contact.html" class="button">Contact Me</a>   
+        </div>
+    </main>
+    
+
+    <footer>
+        <div class="socials">
+            <a href="https://github.com/RebornCube">
+                <img src="icons/github-mark-white.svg" alt="Github" class="github">
+            </a>
+            <a href="https://www.linkedin.com/in/brian-cullen-24b93236/">
+                <img src="icons/black-white-linkedin-logo-vector_svgstack_com_4091763243583.svg" alt="Linkedin" class="linkedin">
+            </a>
+        </div>
+        <p>&copy;&nbsp;<span id="currentYear">2024</span>&nbsp;Brian Cullen</p>
+    </footer>
+</body>
+</html>

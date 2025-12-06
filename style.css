@@ -29,11 +29,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-.rubik-80s-fade-regular {
-  font-family: "Rubik 80s Fade", 'Segoe UI';
-  font-weight: 400;
-  font-style: normal;
-}
 html {
     font-family: 'Segoe UI', sans-serif;
     color: var(--text);
@@ -68,6 +63,7 @@ h1 {
     color: var(--primary);
     display: flex;
     justify-content: center;
+    text-align: center;
 }
 h2 {
     font-size: 2rem;
@@ -215,6 +211,8 @@ header {
     padding: 0.75rem 1.5rem;
     border-radius: var(--button-border-radius);
     font-weight: bold;
+    transition: background-color 0.3s ease; /* smooth background color transition */
+    
 }
 button {
     text-decoration: none;
@@ -225,6 +223,14 @@ button {
     font-weight: bold;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s ease; /* smooth background color transition */
+}
+
+.button:hover, button:hover {
+    background-color: var(--highlight);
+}
+.button:active, button:active {
+    background-color: var(--success);
 }
 /* Contact Me page Section */
 .contact-me {
@@ -293,6 +299,15 @@ textarea {
     text-align: center;
     gap: 0.5rem;
     margin-bottom: 1rem;
+}
+.hero h2 {
+    font-size: 3rem;
+    margin: 1rem;
+    margin-bottom: 0rem;
+    color: var(--primary);
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 .hero-text {
     display: flex;
@@ -450,7 +465,53 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
     margin: 0;
     line-height: 1.6;
     font-size: 1rem;
+    max-width: 100%;
 }
+
+.about-me-section {
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 1rem;
+    grid-template-areas: 
+        "What-I-do"
+        "My-Interests"
+        "Outside-of-Work"
+        "Fun-Facts";  
+}
+
+.What-I-do {
+    grid-area: What-I-do;
+}
+.My-Interests {
+    grid-area: My-Interests;
+}
+.Outside-of-Work {
+    grid-area: Outside-of-Work;
+}
+
+.about-me-section > div {
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border);
+    border-top: var(--highlight) 1px solid;
+}
+.about-me-section p {
+    justify-content: left;
+    text-align: left;
+    margin: 0;
+    color: var(--text);
+    font-size: 1.1rem;
+    padding-bottom: 1rem;
+    max-width: 100%;
+}
+.about-me-section li {
+    list-style: none;
+    margin-bottom: 0.5rem;
+    padding-left: 2rem;
+}
+
 
 /* Tablet Styles */
 @media (min-width: 768px) {
@@ -473,7 +534,7 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
         margin-left: 1rem;
     }
     .profile-pic {
-        max-width: 30rem;
+        max-width: min(50%, 30rem);
     }
     .experience-section {
         grid-template-columns: 1.618fr 1fr; /* golden ratio for better aesthetics */
@@ -481,6 +542,13 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
         grid-template-areas: 
             "Previous-jobs skills-list"
             "education-section education-section";
+    }
+    .about-me-section {
+        grid-template-columns: 1.618fr 1fr; /* golden ratio for better aesthetics */
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+            "What-I-do My-Interests"
+            "Outside-of-Work Fun-Facts";
     }
 }
 
@@ -490,9 +558,6 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
     .hero {
         margin-top: 1rem;
     }
-    /*.profile-pic {
-        clip-path: circle(50%);
-    }*/
     header {
         display: flex;
         justify-content: space-between;
@@ -533,10 +598,11 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
     .openSidebar, .closeSidebar {
         display: none; /* hide menu buttons on desktop */
     }
-    .boxes {
-        grid-template-columns: repeat(4, minmax(0, 400px)); /* four columns max 400px each to avoid very wide boxes on large desktops*/
+    .box-container {
+        grid-template-columns: repeat(4, minmax(0, 400px)); /* three columns max 400px each to avoid very wide boxes on large desktops*/
     }
-    .experience-section {
+
+    .experience-section, .about-me-section {
         max-width: 1600px;
         margin: 0 auto;
         width: 100%;

@@ -355,8 +355,16 @@ footer { /* fixed footer kept outside grid layout, if content isn't long enough 
 .hidden {
     display: none;
 }
-/* Dialog Styles - use of dialod found on youtube https://youtu.be/HgNDii20FG4?si=rEoq2jXuSmGZCznk */
+/* Dialog Styles - use of dialog found on youtube https://youtu.be/HgNDii20FG4?si=rEoq2jXuSmGZCznk */
 #infoDialog {
+    margin: auto;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    background-color: var(--info);
+    color: black;
+    border: 1px solid var(--border);
+}
+#shortcutModal {
     margin: auto;
     border-radius: var(--border-radius);
     padding: 2rem;
@@ -366,9 +374,9 @@ footer { /* fixed footer kept outside grid layout, if content isn't long enough 
 }
 /* blur background of any modal/dialog */
 dialog::backdrop {                           /* found on youtube https://youtu.be/HgNDii20FG4?si=rEoq2jXuSmGZCznk */
-        background: rgba(0, 0, 0, 0.6);
-        backdrop-filter: var(--blur);
-    }
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: var(--blur);
+}
 /* Experience Section experience.html */ 
 .experience-section {
     margin: 1rem;
@@ -435,6 +443,7 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
     margin: 0;
     color: var(--text-muted);
     font-size: 1.1rem;
+    text-align: Left;
 }
 
 .experience-item {
@@ -448,14 +457,14 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
     padding: 0;
     margin-bottom: 0.3rem;
     font-size: 1.4rem;
-    color: var(--highlight);
+    color: var(--text);
 }
 
 .experience-item h4 {
     margin-bottom: 0.8rem;
     font-size: 1.15rem;
     font-weight: 500;
-    color: var(--text-muted, #aaa);
+    color: var(--text-muted);
 }
 
 .experience-item p {
@@ -467,7 +476,7 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
     font-size: 1rem;
     max-width: 100%;
 }
-
+/* about me page styles */
 .about-me-section {
     margin: 1rem;
     display: grid;
@@ -480,7 +489,6 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
         "Outside-of-Work"
         "Fun-Facts";  
 }
-
 .What-I-do {
     grid-area: What-I-do;
 }
@@ -490,7 +498,6 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
 .Outside-of-Work {
     grid-area: Outside-of-Work;
 }
-
 .about-me-section > div {
     background-color: var(--bg-light);
     border-radius: var(--border-radius);
@@ -511,7 +518,6 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
     margin-bottom: 0.5rem;
     padding-left: 2rem;
 }
-
 
 /* Tablet Styles */
 @media (min-width: 768px) {
@@ -554,7 +560,6 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
 
 /* Desktop Styles */
 @media (min-width: 1280px) {
-
     .hero {
         margin-top: 1rem;
     }
@@ -564,36 +569,34 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
         align-items: stretch;
     }   
     nav {
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
-    border-left: none;
-    height: auto;
-    width: auto;
-    border: 1px solid var(--border);
-    border-radius: var(--border-radius);
-    transition: none;
-    display: flex;
-    align-items: center;
-    
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        border-left: none;
+        height: auto;
+        width: auto;
+        border: 1px solid var(--border);
+        border-radius: var(--border-radius);
+        transition: none;
+        display: flex;
+        align-items: center;
     }
     nav ul {
-    list-style: none;
-    flex-direction: row;
-    
+        list-style: none;
+        flex-direction: row;
     }
     nav li{
         display: flex; /* fixes small gap */
     }
     nav a {
-    transition: background-color 0.3s ease; /* smooth background color transition */
+        transition: background-color 0.3s ease; /* smooth background color transition */
     }
     nav a.active-link {
-    border-bottom: 2px solid var(--text);
-    border-left: none;
+        border-bottom: 2px solid var(--text);
+        border-left: none;
     }
     nav a:hover {
-    background-color: var(--highlight);
+        background-color: var(--highlight);
     }
     .openSidebar, .closeSidebar {
         display: none; /* hide menu buttons on desktop */
@@ -601,7 +604,6 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
     .box-container {
         grid-template-columns: repeat(4, minmax(0, 400px)); /* three columns max 400px each to avoid very wide boxes on large desktops*/
     }
-
     .experience-section, .about-me-section {
         max-width: 1600px;
         margin: 0 auto;

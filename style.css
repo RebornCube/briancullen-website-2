@@ -600,7 +600,7 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
     }
     header {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around; /* space around for better spacing on desktop, space between also considered */
         align-items: stretch;
     }  
     .homeLogo-container img {

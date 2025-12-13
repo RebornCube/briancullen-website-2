@@ -582,7 +582,7 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    white-space: nowrap;
+    
 
     transition: background 0.2s, border 0.2s;
 }

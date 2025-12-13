@@ -544,7 +544,6 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
 }
 .Video {
     grid-area: Video;
-    
 }
 .Video iframe {
     width: 100%;

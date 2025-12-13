@@ -203,17 +203,7 @@ header {
   align-items: center;
   gap: 0.5rem;
 }
-.button {
-    text-decoration: none;
-    background-color: var(--secondary);
-    color: var(--bg-dark);
-    padding: 0.75rem 1.5rem;
-    border-radius: var(--button-border-radius);
-    font-weight: bold;
-    transition: background-color 0.3s ease; /* smooth background color transition */
-    
-}
-button {
+.button, button {
     text-decoration: none;
     background-color: var(--secondary);
     color: var(--bg-dark);
@@ -224,6 +214,7 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease; /* smooth background color transition */
 }
+
 
 .button:hover, button:hover {
     background-color: var(--highlight);

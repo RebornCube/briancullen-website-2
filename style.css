@@ -555,21 +555,17 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
 }
 
 /* MCQ Page Styles */
-#quizForm {
-    width: auto
-}
 .question {
     margin-bottom: 1rem;
     padding: 0.5rem 0.75rem;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--highlight);
     width: 100%;
 }
 .question p {
     margin: 0 0 0.4rem;
     justify-content: left;
     text-align: left;
-
-        }
+}
 .options {
     display: flex;
     flex-direction: column;
@@ -577,7 +573,6 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
     align-items: flex-start; /* full width of parent */
     width: 100%; /* ensures container fills main width */
 }
-
 .options label {
     width: 100%; /* makes each answer full width */
     padding: 0.75rem 1rem;
@@ -596,21 +591,17 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
 }
 .options input{
     width: auto;
- 
 }
-
 .options label:hover {
     background: var(--highlight);
     border-color: var(--highlight);
 }
-
 .options input[type="radio"] {
     margin: 0; /* ensures perfect alignment */
 }
-
 #result {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0rem;
     padding: 0.75rem;
     font-weight: bold;
     text-align: center;
@@ -621,6 +612,24 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
 .incorrect {
     background-color: var(--danger);
 }
+.quiz-layout {
+    width: 100%;
+    display: block;
+}
+#quizForm {
+  width: auto;
+  margin: auto;
+}
+.quiz-sticky {
+    display: block;
+    background: var(--bg-light);
+    padding: 1rem;
+}
+.quiz-sticky button {
+    width: 100%;
+}
+
+
 
 /* Tablet Styles */
 @media (min-width: 768px) {
@@ -659,7 +668,45 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
             "What-I-do My-Interests"
             "Outside-of-Work Fun-Facts";
     }
+    .quiz-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 280px; 
+        gap: 1.5rem;
+        align-items: start;
+        max-width: 1100px; 
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    #quizForm {
+        max-width: none;
+        margin: 0;             
+        align-items: stretch;   
+    }
+
+    .quiz-sticky {
+        display: block;
+        position: sticky;
+        top: 1rem;
+        
+        border: 1px solid var(--border);
+        border-radius: var(--border-radius);
+        
+    }
+
+    .quiz-sticky button {
+        width: 100%;
+    }
+
+    .quiz-sticky #result {
+        margin-top: 1rem;
+        margin-bottom: 0;
+    }
+    .quiz-bottom {
+        display: none; /* hidden on tablet and desktop */
+    }
 }
+
 
 /* Desktop Styles */
 @media (min-width: 1100px) {

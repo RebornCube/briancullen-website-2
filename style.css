@@ -557,10 +557,9 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
 
 /* MCQ Page Styles */
 .question {
-    margin-bottom: 1rem;
+    margin: 1rem;
     padding: 0.5rem 0.75rem;
     border-bottom: 1px solid var(--highlight);
-    width: 100%;
 }
 .question p {
     margin: 0 0 0.4rem;
@@ -618,6 +617,7 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
 #quizForm {
   width: auto;
   margin: 1rem;
+  background-color: var(--bg);
 }
 .quiz-sticky {
     display: block;

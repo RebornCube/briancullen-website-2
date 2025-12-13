@@ -241,7 +241,8 @@ form {
     max-width: 700px;
     background-color: var(--bg-light);
     border-radius: var(--border-radius);
-    margin: 0 1rem 0 1rem;;
+    margin: 0 1rem 0 1rem;
+    padding-bottom: 1rem;
 }
 label {
     display: block;
@@ -350,6 +351,14 @@ footer { /* fixed footer kept outside grid layout, if content isn't long enough 
     border-radius: var(--border-radius);
     padding: 2rem;
     background-color: var(--info);
+    color: black;
+    border: 1px solid var(--border);
+}
+#successDialog {
+    margin: auto;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    background-color: var(--success);
     color: black;
     border: 1px solid var(--border);
 }
@@ -653,7 +662,7 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
 }
 
 /* Desktop Styles */
-@media (min-width: 1280px) {
+@media (min-width: 1100px) {
     .hero {
         margin-top: 1rem;
     }
@@ -676,12 +685,14 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
         transition: none;
         display: flex;
         align-items: center;
+        background-color: var(--bg-dark);
     }
     nav ul {
         list-style: none;
         flex-direction: row;
         border: 1px solid var(--border);
         border-radius: var(--border-radius);
+        background-color: var(--bg);
     }
     nav li{
         display: flex; /* fixes small gap */
@@ -707,6 +718,10 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
         margin: 0 auto;
         width: 100%;
         padding: 0 1rem;
+    }
+    p {
+        font-size: 1.5rem;
+        max-width: 800px;
     }
 }
 

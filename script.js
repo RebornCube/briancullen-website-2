@@ -9,37 +9,18 @@ function closeSidebar() {
 }
 
 // functions for opening and closing the info dialog on the contact page
-function submitForm() {
-    document.getElementById('infoDialog').showModal();
+function openModal() {
+    document.getElementById('successDialog').showModal();
 }
 function closeModal() {
-    document.getElementById('infoDialog').close();
+    document.getElementById('successDialog').close();
 }
 
 // get year and insert it into footer
 const d = new Date().getFullYear();
 document.getElementById("currentYear").innerHTML = d;
 
-// (Optional) contact form completion check
-function checkFormCompletion() {
-    // NOTE: getElementsByName returns a NodeList; pick the first element
-    const nameInput = document.getElementsByName('name')[0];
-    const emailInput = document.getElementById('email');
-    const messageInput = document.getElementById('message');
-    const submitButton = document.getElementById('submitBtn');
 
-    if (!nameInput || !emailInput || !messageInput || !submitButton) return;
-
-    const name = nameInput.value.trim();
-    const email = emailInput.value.trim();
-    const message = messageInput.value.trim();
-
-    if (name && email && message) {
-        submitButton.disabled = false;
-    } else {
-        submitButton.disabled = true;
-    }
-}
 
 // ==============================================================
 // Keyboard shortcuts + modal
@@ -102,11 +83,11 @@ function checkFormCompletion() {
         event.preventDefault();
         window.location.href = "experience.html";
         break;
-      case "p":
+      case "b":
         event.preventDefault();
-        window.location.href = "projects.html";
+        window.location.href = "blog.html";
         break;
-      case "m":
+      case "q":
         event.preventDefault();
         window.location.href = "mcq.html";
         break;

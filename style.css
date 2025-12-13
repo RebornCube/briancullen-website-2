@@ -545,6 +545,74 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
     grid-area: Text;
 }
 
+/* MCQ Page Styles */
+#quizForm {
+    width: auto
+}
+.question {
+    margin-bottom: 1rem;
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+}
+.question p {
+    margin: 0 0 0.4rem;
+    justify-content: left;
+    text-align: left;
+
+        }
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    align-items: flex-start; /* full width of parent */
+    width: 100%; /* ensures container fills main width */
+}
+
+.options label {
+    width: 100%; /* makes each answer full width */
+    padding: 0.75rem 1rem;
+
+    background: var(--bg-light);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-muted);
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+
+    transition: background 0.2s, border 0.2s;
+}
+.options input{
+    width: auto;
+ 
+}
+
+.options label:hover {
+    background: var(--highlight);
+    border-color: var(--highlight);
+}
+
+.options input[type="radio"] {
+    margin: 0; /* ensures perfect alignment */
+}
+
+#result {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 0.75rem;
+    font-weight: bold;
+    text-align: center;
+}
+.correct {
+    background-color: var(--success);
+}
+.incorrect {
+    background-color: var(--danger);
+}
+
 /* Tablet Styles */
 @media (min-width: 768px) {
     .box-container {

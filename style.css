@@ -237,11 +237,12 @@ form {
     gap: 1rem;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: auto;
     max-width: 700px;
     background-color: var(--bg-light);
+    border: 1px solid var(--border);
     border-radius: var(--border-radius);
-    margin: 0 1rem 0 1rem;
+    margin: 1rem;
     padding-bottom: 1rem;
 }
 label {
@@ -576,12 +577,10 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
 .options label {
     width: 100%; /* makes each answer full width */
     padding: 0.75rem 1rem;
-
     background: var(--bg-light);
     border-radius: var(--border-radius);
     border: 1px solid var(--border-muted);
     cursor: pointer;
-
     display: flex;
     align-items: center;
     gap: 0.5rem;

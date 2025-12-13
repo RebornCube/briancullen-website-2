@@ -617,7 +617,7 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
 }
 #quizForm {
   width: auto;
-  margin: auto;
+  margin: 1rem;
 }
 .quiz-sticky {
     display: block;

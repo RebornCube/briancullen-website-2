@@ -1,11 +1,11 @@
 /* Border Radius for website for quick changes to border radius, also blur variable*/
 :root{
-  --border-radius: 5px 5px 5px 5px;
-  --button-border-radius: 20px 5px 20px 5px;
-  --blur: blur(2px);
+    --border-radius: 5px 5px 5px 5px;
+    --button-border-radius: 20px 5px 20px 5px;
+    --blur: blur(2px);
 }
 
-/* Colour Palette for website, essential for quick changes to colours*/
+/* Colour Palette for website, essential for quick changes to colours https://www.iamsajid.com/ui-colors/ */
 :root {
     --bg-dark: hsl(7 100% 2%);
     --bg: hsl(17 100% 4.5%);
@@ -25,9 +25,9 @@
 
 /* reset default margins and padding that create “extra boxes” */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 html {
     font-family: 'Segoe UI', sans-serif;
@@ -73,7 +73,7 @@ h2 {
 }
 
 p {
-    display: flex;
+    
     justify-content: center;
     font-size: 1.25rem;
     margin:0 Auto 0.5rem Auto;
@@ -245,7 +245,7 @@ form {
     margin: 1rem;
     padding-bottom: 1rem;
 }
-label {
+label, legend{
     display: block;
     font-size: 1.25rem;
     color: var(--text);
@@ -518,6 +518,7 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
     padding-left: 2rem;
 }
 
+/* Blog Page Styles */
 .card-area {
     display: flex;
     flex-direction: column;
@@ -552,6 +553,7 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
 }
 .Text {
     grid-area: Text;
+    display: flex;
 }
 
 /* MCQ Page Styles */
@@ -582,8 +584,6 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    
-
     transition: background 0.2s, border 0.2s;
 }
 .options input{
@@ -686,22 +686,35 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
         display: block;
         position: sticky;
         top: 1rem;
-        
         border: 1px solid var(--border);
-        border-radius: var(--border-radius);
-        
+        border-radius: var(--border-radius);   
     }
-
     .quiz-sticky button {
         width: 100%;
     }
-
     .quiz-sticky #result {
         margin-top: 1rem;
         margin-bottom: 0;
     }
     .quiz-bottom {
         display: none; /* hidden on tablet and desktop */
+    }
+    .card {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "Title Title"
+        "Video Text";
+    }
+    .Title h2{
+        text-align: left;
+    }
+    .Text {
+        justify-content: left;
+        align-items: center;
+    }
+    .Text p{
+        
+        text-align: left;
     }
 }
 

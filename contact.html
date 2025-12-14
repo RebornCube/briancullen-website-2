@@ -80,10 +80,11 @@
     </header>
     
     <main>
-        <div class="contact-me">
+        <section class="title-section">
             <h1>Contact Me</h1>
             <p>Feel free to reach out for project enquiries, collaborations, or just to say hello.</p>
-
+        </section>
+        <div class="contact-me">
             <form name="contact" action="mailto:D24127253@myTUDublin.ie" method="POST" enctype="text/plain">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required>
@@ -91,18 +92,18 @@
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
 
-                <label for="topic">General Topic</label>
+                <legend>General Topic</legend>
                 <div class="radio-group">
                     <label>
-                        <input type="radio" id="topic" name="topic" value="Project Enquiry">
+                        <input type="radio" name="topic" value="Project Enquiry">
                         Project Enquiry
                     </label>
                     <label>
-                        <input type="radio" id="topic" name="topic" value="Collaboration">
+                        <input type="radio" name="topic" value="Collaboration">
                         Collaboration
                     </label>
                     <label>
-                        <input type="radio" id="topic" name="topic" value="Other">
+                        <input type="radio" name="topic" value="Other">
                         Other
                     </label>
                 </div>

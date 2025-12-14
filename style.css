@@ -649,7 +649,7 @@ dialog::backdrop {                           /* found on youtube https://youtu.b
     .hero-text .button {
         margin-left: 1rem;
     }
-    .profile-pic {
+    .hero picture {
         max-width: min(50%, 30rem);
     }
     .experience-section {
